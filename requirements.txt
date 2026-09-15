@@ -10,3 +10,4 @@ streamlit>=1.54,<2
 pytest>=8,<10
 ruff>=0.6,<1
 pip-audit>=2.9,<3
+setuptools>=83

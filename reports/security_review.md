@@ -25,10 +25,13 @@ Before GitHub publication, the dependency floors and downloader were hardened ag
 
 - `requests>=2.32.4` to exclude CVE-2024-47081 affected releases; public-data sessions also set `trust_env=False` so `.netrc` and proxy credentials are not inherited.
 - `streamlit>=1.54` to exclude the Windows SSRF / NTLM credential-exposure issue fixed in 1.54.0.
-- `setuptools>=70` to exclude CVE-2024-6345 affected build-tool releases.
+- `setuptools>=83` to exclude both CVE-2024-6345 and the setuptools advisory surfaced by the live GitHub audit (PYSEC-2026-3447); the first CI run detected setuptools 79.0.1 and was intentionally blocked before tests.
 - `duckdb>=1.4.2` to exclude the DuckDB 1.4.0–1.4.1 encryption implementation advisory, even though this project does not enable database encryption.
 - Removed unused `scipy`, `statsmodels`, and `scikit-learn` runtime dependencies to reduce dependency and supply-chain surface.
-- CI upgrades to `pip>=26.2` before installation and runs `pip-audit` on every push/PR.
-- The HTTP ingestion helper now permits HTTPS only and allow-lists the authoritative NHS England, NHS Digital/ODS, ONS and GOV.UK hosts used by this project.
+- CI upgrades to `pip>=26.2` and `setuptools>=83` before installation and runs `pip-audit` on every push/PR.
+- GitHub Actions are pinned to the exact reviewed checkout/setup-python commit SHAs used on 15 September 2026 rather than mutable version tags.
+- The HTTP ingestion helper permits HTTPS only, allow-lists the authoritative NHS England, NHS Digital/ODS, ONS and GOV.UK hosts used by this project, and disables environment credential inheritance for public downloads.
 
-These controls reduce known package and source-fetching risk; they do not guarantee absence of future vulnerabilities. GitHub/Dependabot or equivalent continuous dependency monitoring should remain enabled for the public repository.
+Local pre-publication status: 44/44 tests passing, 0 likely secret findings, and 0 files over 5 MiB.
+
+These controls reduce known package and source-fetching risk; they do not guarantee absence of future vulnerabilities. Continuous dependency auditing remains part of CI.
