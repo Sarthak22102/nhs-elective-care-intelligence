@@ -1,0 +1,20 @@
+{
+  "name": "NHS Elective Care Intelligence - Accessible",
+  "dataColors": ["#005EB8", "#007F3B", "#768692", "#FFB81C", "#D5281B", "#330072", "#00A499", "#4C6272"],
+  "background": "#FFFFFF",
+  "foreground": "#231F20",
+  "tableAccent": "#005EB8",
+  "textClasses": {
+    "title": {"fontFace": "Arial", "fontSize": 14, "color": "#212B32"},
+    "header": {"fontFace": "Arial", "fontSize": 11, "color": "#212B32"},
+    "label": {"fontFace": "Arial", "fontSize": 10, "color": "#425563"}
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "title": [{"show": true, "fontFamily": "Arial", "fontSize": 12, "fontColor": {"solid": {"color": "#212B32"}}}],
+        "background": [{"show": true, "color": {"solid": {"color": "#FFFFFF"}}, "transparency": 0}]
+      }
+    }
+  }
+}

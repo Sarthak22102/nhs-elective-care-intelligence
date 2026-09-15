@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=70", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nhs-elective-care-intelligence"
+version = "1.0.0"
+description = "Reproducible NHS elective-care waiting-list, capacity and health-inequality analytics platform."
+requires-python = ">=3.11"
+dependencies = [
+  "pandas>=2.2,<3",
+  "numpy>=2.0,<3",
+  "duckdb>=1.4.2,<2",
+  "requests>=2.32.4,<3",
+  "beautifulsoup4>=4.12,<5",
+  "openpyxl>=3.1,<4",
+  "PyYAML>=6,<7",
+  "matplotlib>=3.9,<4",
+  "streamlit>=1.54,<2"
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.6,<1", "pip-audit>=2.9,<3"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

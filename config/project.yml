@@ -1,0 +1,20 @@
+project:
+  name: NHS Elective Care Intelligence
+  warehouse: data/processed/nhs_elective_care.duckdb
+  timezone: Europe/London
+  raw_dir: data/raw
+  interim_dir: data/interim
+  processed_dir: data/processed
+  reference_dir: data/reference
+
+quality:
+  extreme_mom_absolute_pct: 0.30
+  forecast_min_months: 24
+  pressure_score_min_components: 4
+
+analysis:
+  rtt_history_start_fiscal_year: 2021
+  headline_source: rtt_official_statistics
+  demographic_source: wlmds_management_information
+  population_standardisation: disabled_unless_geography_compatible
+  kh03_capacity_label: bed_capacity_proxy

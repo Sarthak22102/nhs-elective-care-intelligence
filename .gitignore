@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Data: source files are downloaded reproducibly, not committed
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*.parquet
+data/processed/*.duckdb
+data/processed/*.db
+
+# Local metadata/cache
+.cache/
+logs/
+*.log
+.env
+.env.*
+!.env.example
+
+# BI/local artifacts
+*.pbix
+*.pbit
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

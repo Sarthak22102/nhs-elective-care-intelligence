@@ -1,0 +1,58 @@
+sources:
+  rtt:
+    publisher: NHS England
+    classification: Accredited official statistics
+    landing_page: https://www.england.nhs.uk/statistics/statistical-work-areas/rtt-waiting-times/
+    frequency: Monthly
+    authoritative_for:
+      - headline_incomplete_pathways
+      - admitted_completed_pathways
+      - non_admitted_completed_pathways
+      - new_rtt_periods
+      - waiting_time_bands
+      - 18_week_performance
+    revision_note: Publications can be revised; pipeline records source URL, extraction time and checksum.
+
+  wlmds:
+    publisher: NHS England
+    classification: Management information
+    landing_page: https://www.england.nhs.uk/statistics/statistical-work-areas/rtt-waiting-times/wlmds/
+    summary_archive: https://www.england.nhs.uk/statistics/statistical-work-areas/rtt-waiting-times/wlmds/wlmds-summary-archive/
+    demographics_archive: https://www.england.nhs.uk/statistics/statistical-work-areas/rtt-waiting-times/wlmds/key-patient-demographics-archive-2/
+    frequency: Monthly publication of weekly collection outputs
+    authoritative_for:
+      - demographic_waiting_list_composition
+      - age_sex_ethnicity_imd_breakdowns
+      - detailed_open_new_completed_pathway_management_information
+    suppression: Small published counts are masked; unsuppressed counts may be rounded. Never impute or reverse-engineer.
+
+  kh03:
+    publisher: NHS England
+    classification: Officially published operational statistics
+    landing_page: https://www.england.nhs.uk/statistics/statistical-work-areas/bed-availability-and-occupancy/bed-availability-and-occupancy-kh03/
+    frequency: Quarterly
+    authoritative_for:
+      - available_bed_days
+      - occupied_bed_days
+    interpretation: Bed capacity/occupancy proxy only; not total elective clinical capacity.
+
+  ods:
+    publisher: NHS England Organisation Data Service
+    classification: Reference data
+    landing_page: https://digital.nhs.uk/services/organisation-data-service
+    data_search_export: https://digital.nhs.uk/services/organisation-data-service/data-search-and-export
+    trust_download_page: https://digital.nhs.uk/services/organisation-data-service/data-search-and-export/csv-downloads/other-nhs-organisations
+    trust_predefined_report: https://www.odsdatasearchandexport.nhs.uk/api/getReport?report=etr
+    frequency: Reference feeds updated regularly; DSE predefined reports are refreshed nightly.
+    authoritative_for:
+      - organisation_codes
+      - organisation_names
+      - organisation_types
+      - status_and_successor_relationships
+
+  ons_population:
+    publisher: Office for National Statistics
+    classification: Official statistics
+    landing_page: https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/estimatesofthepopulationforenglandandwales
+    frequency: Annual
+    use_rule: Only use denominators when numerator and denominator geography/population are compatible.
